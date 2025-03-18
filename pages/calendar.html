@@ -1,15 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>calendar page</title>
+    <title>캘린더</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #fff;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .date {
+        text-align: center;
+        margin: 10px 0;
+        font-size: 16px;
+      }
+
+      .calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .calendar div {
+        padding: 8px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+      }
+
+      .calendar div.today {
+        background-color: #f0f0f0;
+      }
+    </style>
   </head>
-  <h1>캘린더 페이지</h1>
   <body>
-    <div id="" calendar>
-      <p>zzz</p>
+    <h1>캘린더</h1>
+
+    <div class="date">오늘 날짜: <span id="today-date"></span></div>
+
+    <div class="calendar">
+      <div>일</div>
+      <div>월</div>
+      <div>화</div>
+      <div>수</div>
+      <div>목</div>
+      <div>금</div>
+      <div>토</div>
+      <!-- 날짜 예시 -->
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div class="today">4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
     </div>
+
+    <script>
+      const today = new Date();
+      const todayDateElement = document.getElementById('today-date');
+      todayDateElement.textContent = today.toLocaleDateString();
+    </script>
   </body>
 </html>
-<div class="date">오늘 날짜:<span id="totay-data"></span></div>
